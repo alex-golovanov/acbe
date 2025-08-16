@@ -11,6 +11,8 @@ import log from 'log';
 import storage from 'storage';
 import store from 'store';
 import highLevelPac from 'highLevelPac';
+import lowLevelPac from 'lowLevelPac';
+import proxy from '../../dualUse/proxy';
 import healthcheck from '../../dualUse/log/healthcheck';
 import smartSettingsHelpers from 'bg/pingSmartSettings/helpers';
 
@@ -103,8 +105,38 @@ export default (): void => {
         let email = user.email;
         let password = user.loginData.credentials.access_token;
 
-        if (await checkAuthLimitExceeded(details)) {
-          // Limit reached
+        const { shouldBreak, shouldSwitchServer } = await checkAuthLimitExceeded(details);
+        
+        if (shouldSwitchServer) {
+          // Try to rotate to next server in the same location
+          const country = smartSettingsHelpers.getCountryFromHostForFakeDomain(host);
+          
+          healthcheck.logOnAuthRequiredEvent({
+            type: 'onAuth-triggered-switching-server',
+            country,
+            host,
+            args: [
+              details.method,
+              port.toString(),
+              initiator,
+              url,
+              globalCount,
+            ],
+          });
+          
+          const rotated = await lowLevelPac.rotateServerInCountry(country, host);
+          
+          if (rotated) {
+            // Update PAC script with new server order
+            await proxy.setFromStore();
+            log(`Server rotated in country ${country}, failed server ${host} moved to end`);
+          }
+          
+          // Continue with authentication on the new server
+          resolve({ authCredentials: { username: email, password } });
+          
+        } else if (shouldBreak) {
+          // Limit reached - disable proxy
           healthcheck.logOnAuthRequiredEvent({
             type: 'onAuth-triggered-limit-exceeded-cancel-auth',
             country,
@@ -125,7 +157,7 @@ export default (): void => {
 
           smartAlert( internationalize( 'premium_server_authentication_error' ));
         } else {
-          // Limit not reached
+          // Normal authentication - limit not reached
           healthcheck.logOnAuthRequiredEvent({
             type: 'onAuth-triggered-within-limit-authenticate-with-email',
             country,
