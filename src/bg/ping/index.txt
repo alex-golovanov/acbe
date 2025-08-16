@@ -1,0 +1,10 @@
+Full functionality described in task BC-447.
+
+Ping requests to each server to know is it working.
+
+Pings performed every 48 hours.
+
+From each country, we are selecting 50% of servers.
+On each selected server we are sending a request.
+If there is no response in 10 seconds, the server is considered unavailable.
+Rating of a country calculated as the average value of it's servers.

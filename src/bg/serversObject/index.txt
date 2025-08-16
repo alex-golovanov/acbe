@@ -1,0 +1,2 @@
+Servers list update every 6 hours.
+In case of error every 5 minutes.

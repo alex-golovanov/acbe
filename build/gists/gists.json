@@ -1,0 +1,69 @@
+[
+  {
+    "comment": "QA rootUrl",
+    "gistUid": "57bb84e8dd5ba79059b76d7bd64cbadb",
+    "filename": "qa.json",
+    "content": [
+      "https://mrr-qa-static.b-cdn.net/api/"
+    ]
+  },
+  {
+    "comment": "QA2 rootUrl",
+    "gistUid": "8b8d36b124ffa887f77f7e0551242da5",
+    "filename": "qa2.json",
+    "content": [
+      "https://mrr-qa2-static.b-cdn.net/api/"
+    ]
+  },
+  {
+    "comment": "QA3 rootUrl",
+    "gistUid": "d603e3d1bc7b98c96d4fe79b61da5b4c",
+    "filename": "qa3.json",
+    "content": [
+      "https://mrr-qa3-static.b-cdn.net/api/"
+    ]
+  },
+  {
+    "comment": "Common QA dynamicConfig",
+    "gistUid": "6f73159599a237a061a0d3fc457d77d8",
+    "filename": "qa_extension_dynamic_config.json",
+    "content": {
+      "browsecCountry": "fi",
+      "defaultCountry": {
+        "premium": "nl",
+        "free": "nl"
+      },
+      "experiments": {
+        "exp408": {
+          "enabled": true,
+          "distribution": [
+            50,
+            50
+          ]
+        }
+      }
+    }
+  },
+  {
+    "SKIP": true,
+    "comment": "Production dynamicConfig",
+    "gistUid": "ef7f684e524d01137b84313a60e1ed01",
+    "filename": "extension_dynamic_config.json",
+    "content": {
+      "browsecCountry": "fi",
+      "defaultCountry": {
+        "premium": "nl",
+        "free": "nl"
+      },
+      "experiments": {
+        "exp408": {
+          "enabled": true,
+          "distribution": [
+            90,
+            10
+          ]
+        }
+      }
+    }
+  }
+]

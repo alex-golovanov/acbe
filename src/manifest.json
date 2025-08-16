@@ -1,0 +1,50 @@
+{
+  "name": "__MSG_extension_name__",
+  "short_name": "__MSG_esn__",
+  "description": "__MSG_extension_description__",
+  "homepage_url": "https://browsec.com/",
+  "default_locale": "en",
+  "icons": {
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  },
+  "browser_action": {
+    "default_icon": {
+      "16": "images/icons/16x16/disabled.png",
+      "19": "images/icons/19x19/disabled.png",
+      "24": "images/icons/24x24/disabled.png",
+      "32": "images/icons/32x32/disabled.png",
+      "38": "images/icons/38x38/disabled.png"
+    },
+    "default_title": "__MSG_browser_action_inactive_title__",
+    "default_popup": "popup/popup.html"
+  },
+  "permissions": [
+    "proxy",
+    "storage",
+    "webRequest"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*/*"
+      ],
+      "js": [
+        "browsecSiteContentScript.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "timezoneChange.js"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "content_security_policy": "default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://*.google.com https://*.gstatic.com; font-src 'self'; object-src 'none'; connect-src 'self' https: http://detectportal.firefox.com http://*/api/test http://connectivitycheck.android.com http://example.com http://*.httpstat.us http://*.httpstat.us/*  http://www.root-servers.org"
+}

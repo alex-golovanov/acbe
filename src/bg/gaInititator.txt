@@ -1,0 +1,5 @@
+initiate method called every 24 hours.
+
+Keep in mind this: experiments which requires activation event 
+won't give variant again after script execution without such event.
+

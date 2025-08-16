@@ -1,0 +1,2 @@
+ok.ru
+mycdn.me

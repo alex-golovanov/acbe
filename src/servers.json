@@ -1,0 +1,625 @@
+{
+  "version": 20250313114503,
+  "countries": {
+    "at": {
+      "timezoneOffset": 60,
+      "premium_servers": [{
+        "host": "at90.fastfetch.xyz",
+        "port": 3849
+      }, {
+        "host": "at88.quickcache.space",
+        "port": 18708
+      }, {
+        "host": "at58.speedycdn.fun",
+        "port": 12955
+      }]
+    },
+    "au": {
+      "timezoneOffset": 660,
+      "premium_servers": [{
+        "host": "au24.fastfetch.live",
+        "port": 11389
+      }, {
+        "host": "au23.fastfetch.xyz",
+        "port": 16131
+      }, {
+        "host": "au27.fastcontent.xyz",
+        "port": 24788
+      }]
+    },
+    "be": {
+      "timezoneOffset": 60,
+      "premium_servers": [{
+        "host": "be18.fastcontent.live",
+        "port": 2718
+      }, {
+        "host": "be16.fastcontent.xyz",
+        "port": 23446
+      }, {
+        "host": "be10.cacheflow.cloud",
+        "port": 7216
+      }]
+    },
+    "bg": {
+      "timezoneOffset": 120,
+      "premium_servers": [{
+        "host": "bg15.fastcontent.live",
+        "port": 3217
+      }, {
+        "host": "bg16.cdnaccelerate.xyz",
+        "port": 22994
+      }, {
+        "host": "bg22.cachequick.info",
+        "port": 15779
+      }]
+    },
+    "br": {
+      "timezoneOffset": -180,
+      "premium_servers": [{
+        "host": "br5.contentboost.click",
+        "port": 7753
+      }]
+    },
+    "ca": {
+      "timezoneOffset": -240,
+      "premium_servers": [{
+        "host": "ca8.cacheflow.pro",
+        "port": 13815
+      }, {
+        "host": "ca7.cachequick.info",
+        "port": 19358
+      }, {
+        "host": "ca5.fastcontent.store",
+        "port": 12025
+      }]
+    },
+    "ch": {
+      "timezoneOffset": 60,
+      "premium_servers": [{
+        "host": "ch1.contentboost.click",
+        "port": 20968
+      }]
+    },
+    "cl": {
+      "timezoneOffset": -180,
+      "premium_servers": [{
+        "host": "cl2.quickcache.space",
+        "port": 24201
+      }]
+    },
+    "cy": {
+      "timezoneOffset": 120,
+      "premium_servers": [{
+        "host": "cy15.fastcontent.store",
+        "port": 22055
+      }, {
+        "host": "cy13.cdnnetwork.xyz",
+        "port": 15643
+      }, {
+        "host": "cy17.contentboost.website",
+        "port": 7276
+      }]
+    },
+    "cz": {
+      "timezoneOffset": 60,
+      "premium_servers": [{
+        "host": "cz3.fastfetch.live",
+        "port": 13076
+      }, {
+        "host": "cz2.fastfetch.xyz",
+        "port": 2714
+      }]
+    },
+    "de": {
+      "timezoneOffset": 60,
+      "premium_servers": [{
+        "host": "de203.edgeaccelerator.space",
+        "port": 9171
+      }, {
+        "host": "de211.edgeaccelerator.website",
+        "port": 8966
+      }, {
+        "host": "de201.edgecache.fun",
+        "port": 5721
+      }]
+    },
+    "dk": {
+      "timezoneOffset": 60,
+      "premium_servers": [{
+        "host": "dk4.cdnexpress.live",
+        "port": 8915
+      }, {
+        "host": "dk3.fastfetch.info",
+        "port": 20945
+      }, {
+        "host": "dk5.cdnexpress.art",
+        "port": 5080
+      }]
+    },
+    "es": {
+      "timezoneOffset": 60,
+      "premium_servers": [{
+        "host": "es9.rapidcdn.click",
+        "port": 13134
+      }, {
+        "host": "es8.speedstream.click",
+        "port": 2248
+      }, {
+        "host": "es7.speedstream.info",
+        "port": 23295
+      }]
+    },
+    "fi": {
+      "timezoneOffset": 120,
+      "premium_servers": [{
+        "host": "fi200.cacheflow.pro",
+        "port": 15796
+      }, {
+        "host": "fi210.quickcache.website",
+        "port": 5077
+      }, {
+        "host": "fi198.fastcontent.xyz",
+        "port": 8184
+      }]
+    },
+    "fr": {
+      "timezoneOffset": 60,
+      "servers": [{
+        "host": "fr5.fastcache.xyz",
+        "port": 22144
+      }, {
+        "host": "fr4.edgeaccelerator.xyz",
+        "port": 1519
+      }, {
+        "host": "fr8.datafrenzy.org",
+        "port": 17014
+      }, {
+        "host": "fr9.cdnflow.net",
+        "port": 21874
+      }, {
+        "host": "fr1.speedycdn.xyz",
+        "port": 21482
+      }],
+      "premium_servers": [{
+        "host": "fr25.cacheflow.cloud",
+        "port": 21498
+      }, {
+        "host": "fr16.cdnaccelerate.xyz",
+        "port": 22995
+      }, {
+        "host": "fr24.cacheflow.live",
+        "port": 24327
+      }]
+    },
+    "gr": {
+      "timezoneOffset": 120,
+      "premium_servers": [{
+        "host": "gr7.contentboost.click",
+        "port": 11925
+      }, {
+        "host": "gr6.streamlined.delivery",
+        "port": 14156
+      }, {
+        "host": "gr5.streamlineddata.space",
+        "port": 24853
+      }]
+    },
+    "hk": {
+      "timezoneOffset": 480,
+      "premium_servers": [{
+        "host": "hk13.edgecache.online",
+        "port": 23517
+      }, {
+        "host": "hk12.edgecache.xyz",
+        "port": 3124
+      }, {
+        "host": "hk15.edgecache.fun",
+        "port": 3617
+      }]
+    },
+    "hr": {
+      "timezoneOffset": 60,
+      "premium_servers": [{
+        "host": "hr46.edgecache.live",
+        "port": 10390
+      }, {
+        "host": "hr51.contentboost.click",
+        "port": 22211
+      }, {
+        "host": "hr44.fastcontent.xyz",
+        "port": 17331
+      }]
+    },
+    "hu": {
+      "timezoneOffset": 60,
+      "premium_servers": [{
+        "host": "hu25.cdnaccelerate.site",
+        "port": 6338
+      }, {
+        "host": "hu24.cdnaccelerate.space",
+        "port": 17840
+      }, {
+        "host": "hu27.cachequick.pro",
+        "port": 20651
+      }]
+    },
+    "ie": {
+      "timezoneOffset": 0,
+      "premium_servers": [{
+        "host": "ie15.cacheflow.cloud",
+        "port": 20197
+      }, {
+        "host": "ie16.streamlineddata.space",
+        "port": 6778
+      }, {
+        "host": "ie22.contentrush.fun",
+        "port": 21866
+      }]
+    },
+    "il": {
+      "timezoneOffset": 120,
+      "premium_servers": [{
+        "host": "il3.quickcache.click",
+        "port": 19169
+      }, {
+        "host": "il2.edgecache.xyz",
+        "port": 8499
+      }, {
+        "host": "il4.fastfetch.fun",
+        "port": 21929
+      }]
+    },
+    "in": {
+      "timezoneOffset": 330,
+      "premium_servers": [{
+        "host": "in27.cachequick.xyz",
+        "port": 8823
+      }, {
+        "host": "in26.cdnaccelerate.site",
+        "port": 6827
+      }, {
+        "host": "in30.cachequick.info",
+        "port": 23046
+      }]
+    },
+    "is": {
+      "timezoneOffset": 0,
+      "premium_servers": [{
+        "host": "is7.cdnexpress.live",
+        "port": 15174
+      }, {
+        "host": "is6.cdnnetwork.fun",
+        "port": 18148
+      }, {
+        "host": "is8.cdnexpress.art",
+        "port": 5356
+      }]
+    },
+    "it": {
+      "timezoneOffset": 60,
+      "premium_servers": [{
+        "host": "it5.cachequick.pro",
+        "port": 16289
+      }, {
+        "host": "it4.fastcontent.store",
+        "port": 23041
+      }, {
+        "host": "it6.edgecache.live",
+        "port": 23145
+      }]
+    },
+    "jp": {
+      "timezoneOffset": 540,
+      "premium_servers": [{
+        "host": "jp40.speedycdn.fun",
+        "port": 19809
+      }, {
+        "host": "jp48.edgecache.fun",
+        "port": 19768
+      }, {
+        "host": "jp38.fastfetch.live",
+        "port": 2418
+      }]
+    },
+    "kr": {
+      "timezoneOffset": 540,
+      "premium_servers": [{
+        "host": "kr18.contentboost.website",
+        "port": 18256
+      }, {
+        "host": "kr17.quickcache.website",
+        "port": 16237
+      }, {
+        "host": "kr21.cdnnetwork.live",
+        "port": 18447
+      }]
+    },
+    "lt": {
+      "timezoneOffset": 120,
+      "premium_servers": [{
+        "host": "lt3.cdnaccelerate.xyz",
+        "port": 1495
+      }, {
+        "host": "lt2.cdnexpress.art",
+        "port": 22391
+      }, {
+        "host": "lt4.fastcontent.live",
+        "port": 19964
+      }]
+    },
+    "lv": {
+      "timezoneOffset": 120,
+      "premium_servers": [{
+        "host": "lv17.cacheflow.pro",
+        "port": 10165
+      }, {
+        "host": "lv16.cachequick.info",
+        "port": 4213
+      }, {
+        "host": "lv19.cacheflow.cloud",
+        "port": 12890
+      }]
+    },
+    "mx": {
+      "timezoneOffset": -360,
+      "premium_servers": [{
+        "host": "mx3.cdnexpress.live",
+        "port": 7375
+      }]
+    },
+    "nl": {
+      "timezoneOffset": 60,
+      "servers": [{
+        "host": "nl14.datafrenzy.org",
+        "port": 23192
+      }, {
+        "host": "nl34.streamlineddata.pro",
+        "port": 10472
+      }, {
+        "host": "nl12.streamlineddata.pro",
+        "port": 10499
+      }, {
+        "host": "nl28.speedycdn.xyz",
+        "port": 12482
+      }, {
+        "host": "nl29.rapidcdn.xyz",
+        "port": 10074
+      }],
+      "premium_servers": [{
+        "host": "nl296.fastfetch.info",
+        "port": 18690
+      }, {
+        "host": "nl309.streamlineddata.space",
+        "port": 22615
+      }, {
+        "host": "nl294.cachequick.xyz",
+        "port": 4059
+      }]
+    },
+    "no": {
+      "timezoneOffset": 60,
+      "premium_servers": [{
+        "host": "no6.fastcontent.xyz",
+        "port": 13507
+      }, {
+        "host": "no5.fastfetch.info",
+        "port": 17111
+      }, {
+        "host": "no3.edgecache.fun",
+        "port": 5969
+      }]
+    },
+    "pl": {
+      "timezoneOffset": 60,
+      "premium_servers": [{
+        "host": "pl21.speedycdn.space",
+        "port": 13540
+      }, {
+        "host": "pl20.streamlined.delivery",
+        "port": 15148
+      }, {
+        "host": "pl23.speedstream.live",
+        "port": 18068
+      }]
+    },
+    "ro": {
+      "timezoneOffset": 120,
+      "premium_servers": [{
+        "host": "ro5.cachequick.pro",
+        "port": 1359
+      }, {
+        "host": "ro4.edgeaccelerator.space",
+        "port": 7876
+      }]
+    },
+    "rs": {
+      "timezoneOffset": 60,
+      "premium_servers": [{
+        "host": "rs13.rapidcdn.click",
+        "port": 10429
+      }, {
+        "host": "rs12.speedstream.click",
+        "port": 20258
+      }]
+    },
+    "ru": {
+      "timezoneOffset": 180,
+      "premium_servers": [{
+        "host": "ru15.cdnnetwork.xyz",
+        "port": 9348
+      }, {
+        "host": "ru14.contentboost.click",
+        "port": 7394
+      }, {
+        "host": "ru5.edgecache.fun",
+        "port": 15508
+      }]
+    },
+    "se": {
+      "timezoneOffset": 60,
+      "premium_servers": [{
+        "host": "se18.quickcache.click",
+        "port": 6278
+      }, {
+        "host": "se17.quickcache.space",
+        "port": 4372
+      }, {
+        "host": "se20.fastfetch.live",
+        "port": 7835
+      }]
+    },
+    "sg": {
+      "timezoneOffset": 480,
+      "servers": [{
+        "host": "sg5.datafrenzy.org",
+        "port": 20571
+      }, {
+        "host": "sg10.edgeaccelerator.xyz",
+        "port": 6550
+      }, {
+        "host": "sg3.cdnflow.net",
+        "port": 23803
+      }, {
+        "host": "sg8.speedycdn.xyz",
+        "port": 2569
+      }, {
+        "host": "sg7.streamlineddata.pro",
+        "port": 18297
+      }],
+      "premium_servers": [{
+        "host": "sg18.streamlined.delivery",
+        "port": 21867
+      }, {
+        "host": "sg17.streamlineddata.space",
+        "port": 13841
+      }, {
+        "host": "sg21.cdnnetwork.xyz",
+        "port": 22784
+      }]
+    },
+    "si": {
+      "timezoneOffset": 60,
+      "premium_servers": [{
+        "host": "si8.speedycdn.fun",
+        "port": 24053
+      }, {
+        "host": "si7.edgeaccelerator.space",
+        "port": 13312
+      }, {
+        "host": "si5.fastfetch.live",
+        "port": 8275
+      }]
+    },
+    "tr": {
+      "timezoneOffset": 180,
+      "premium_servers": [{
+        "host": "tr7.quickcache.space",
+        "port": 9207
+      }, {
+        "host": "tr12.contentboost.click",
+        "port": 8877
+      }, {
+        "host": "tr5.cachequick.xyz",
+        "port": 9607
+      }]
+    },
+    "ua": {
+      "timezoneOffset": 120,
+      "premium_servers": [{
+        "host": "ua5.fastcontent.xyz",
+        "port": 13015
+      }, {
+        "host": "ua4.fastfetch.fun",
+        "port": 23341
+      }]
+    },
+    "uk": {
+      "timezoneOffset": 0,
+      "servers": [{
+        "host": "uk26.streamlineddata.pro",
+        "port": 7714
+      }, {
+        "host": "uk31.contentnode.net",
+        "port": 15767
+      }, {
+        "host": "uk24.swiftcdn.org",
+        "port": 4043
+      }, {
+        "host": "uk29.edgeaccelerator.xyz",
+        "port": 19572
+      }, {
+        "host": "uk28.rapidcdn.xyz",
+        "port": 12109
+      }],
+      "premium_servers": [{
+        "host": "uk100.speedstream.click",
+        "port": 18383
+      }, {
+        "host": "uk101.fastfetch.fun",
+        "port": 15523
+      }, {
+        "host": "uk109.datadistribute.cloud",
+        "port": 5771
+      }]
+    },
+    "us": {
+      "timezoneOffset": -240,
+      "servers": [{
+        "host": "us28.bd-assets.com",
+        "port": 23479
+      }, {
+        "host": "us26.datafrenzy.org",
+        "port": 5905
+      }, {
+        "host": "us25.datafrenzy.org",
+        "port": 4463
+      }, {
+        "host": "us21.fastcache.xyz",
+        "port": 4450
+      }, {
+        "host": "us29.speedycdn.xyz",
+        "port": 3172
+      }],
+      "premium_servers": [{
+        "host": "us216.cdnaccelerate.space",
+        "port": 18956
+      }, {
+        "host": "us205.speedycdn.space",
+        "port": 11913
+      }, {
+        "host": "us215.cacheflow.cloud",
+        "port": 6546
+      }]
+    },
+    "usw": {
+      "timezoneOffset": -420,
+      "premium_servers": [{
+        "host": "usw25.speedycdn.space",
+        "port": 9478
+      }, {
+        "host": "usw16.cachequick.pro",
+        "port": 3124
+      }, {
+        "host": "usw24.edgecache.live",
+        "port": 9578
+      }]
+    },
+    "za": {
+      "timezoneOffset": 120,
+      "premium_servers": [{
+        "host": "za10.streamlineddata.space",
+        "port": 19226
+      }, {
+        "host": "za9.cacheflow.cloud",
+        "port": 9622
+      }, {
+        "host": "za11.streamlined.delivery",
+        "port": 2197
+      }]
+    }
+  },
+  "recommended_countries": {
+    "free": ["fr"],
+    "premium": ["at", "be", "bg", "de", "fi", "gr", "hr", "nl", "us"]
+  }
+}

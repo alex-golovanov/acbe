@@ -1,0 +1,12 @@
+For debugging purposes: list of all internal pages:
+https://www.ghacks.net/2012/09/04/list-of-chrome-urls-and-their-purpose/
+
+Useful variants:
+chrome://net-internals/#hsts
+chrome://appcache-internals
+chrome://process-internals/
+chrome://serviceworker-internals/
+
+
+Service worker + onAuthRequired bug:
+https://github.com/w3c/ServiceWorker/issues/119

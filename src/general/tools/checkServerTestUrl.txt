@@ -1,0 +1,2 @@
+In case ob aborted request to decrease amount of errors promise 
+will lreturn just 0.

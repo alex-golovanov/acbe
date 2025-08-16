@@ -1,0 +1,1 @@
+export { getServersArray } from './getServersArray';

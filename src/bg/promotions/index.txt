@@ -1,0 +1,40 @@
+Initially described in tasks BC-380 & BC-586.
+
+The initial list of promotions is getting here:
+https://browsec.com/api/v1/promo/extension
+
+On server level, reply is in such format:
+
+'promo': Array<{
+  'from': string,
+  'kind'?: 'common' | 'personal',
+  'media': {|
+    'banner': {|
+      'click_url'?: string,
+      'json_url'?: string,
+      'json'?: string
+    |},
+    'promo_page'?: {|
+      'active_tab'? :boolean,
+      'scope'?: 'all' | 'new',
+      'url': string
+    |}
+  |} | void,
+  'till': string,
+  'uid': string
+}>,
+
+Promotion can be represented by banner and/or page 
+(it is not necessery that both are specified at the same time).
+
+Promotion with kind === personal shown only for free users.
+
+Page for each promotion shown ony one time.
+
+Request of promotions list made every 24 hours.
+The promotion's page shown on the second extension turning on OR 
+in 1 hour since promotions list update.
+
+Loop for a promotion's page runs with 1 hour delay.
+
+scope 'new' means only session after installation

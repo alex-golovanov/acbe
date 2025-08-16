@@ -1,0 +1,6 @@
+For chrome:
+This page shown immediately if store page opened.
+Otherwise this page shown in 10 seconds in new tab.
+
+For firefox/opera:
+This page shown immediately.

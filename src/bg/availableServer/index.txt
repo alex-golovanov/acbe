@@ -1,0 +1,6 @@
+Functionality desribed at task BC-451.
+
+Checking of available servers from the list.
+
+There is initial list in extension itself. 
+New list downloaded from github.

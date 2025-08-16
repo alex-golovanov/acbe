@@ -1,0 +1,50 @@
+image: node:20.14
+
+pipelines:
+  default:
+    - step:
+        name: NPM Install
+        caches:
+          - node
+        script:
+          - npm install --no-audit
+    - parallel:
+      - step:
+          name: NPM Audit
+          caches:
+            - node
+          script:
+            - npm audit
+      - step:
+          name: Unit Tests
+          caches:
+            - node
+          script:
+            - npm run test
+      # - step:
+      #     name: Validate v3:chrome + dist
+      #     caches:
+      #       - node
+      #     script:
+      #       - ENV=production npm run build dist:v3:chrome
+      #       - npm run validate
+      #     artifacts:
+      #       - "*.zip"
+      - step:
+          name: Validate v2:firefox + dist
+          caches:
+            - node
+          script:
+            - ENV=production npm run build dist:v2:firefox
+            - npm run validate
+          artifacts:
+            - "*.xpi"
+
+  custom:
+    audit:
+      - step:
+          name: NPM Audit
+          caches:
+            - node
+          script:
+            - npm audit

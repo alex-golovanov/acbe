@@ -1,0 +1,4 @@
+browser.runtime.onConnect used to make direct streaming connection 
+to background page from popup or pages or contentScript.
+
+Connection from other source made by browser.runtime.connect.

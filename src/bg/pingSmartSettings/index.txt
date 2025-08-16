@@ -1,0 +1,7 @@
+Full functionality described in task BC-1229.
+
+Ping requests to each server from SmartSettings countries (duplicates with non-existing URLs aka 'fake servers') to save auth credentials in cash and avoid Authorization popups from iframes.
+
+Pings performed every ~1 hour.
+
+On each run we are sending a request to every country's fake server to save auth in cache and prevent popups.

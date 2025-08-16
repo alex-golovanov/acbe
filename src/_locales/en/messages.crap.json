@@ -1,0 +1,126 @@
+{
+  "access_premium_locations": {
+    "message": "Access Premium Locations",
+    "description": ""
+  },
+  "browsec": {
+    "message": "Browsec",
+    "description": ""
+  },
+  "browsec_cant_change_proxy_settings": {
+    "message": "Browsec can't change proxy settings because it's blocked by other extension.\\nPlease remove extension which blocks proxy settings and try again.",
+    "description": ""
+  },
+  "browsec_version": {
+    "message": "Browsec version",
+    "description": ""
+  },
+  "bundled_configuration": {
+    "message": "Bundled configuration",
+    "description": ""
+  },
+  "enter_email_and_password": {
+    "message": "Enter email and password",
+    "description": ""
+  },
+  "error_check_credentials": {
+    "message": "Can't check credentials. Check network connection and try again.",
+    "description": ""
+  },
+  "get_premium": {
+    "message": "Get Premium",
+    "description": ""
+  },
+  "internet_access_via": {
+    "message": "Internet access via:",
+    "description": ""
+  },
+  "options": {
+    "message": "Options",
+    "description": ""
+  },
+  "options_disconnect_button": {
+    "message": "Disconnect",
+    "description": ""
+  },
+  "options_connected": {
+    "message": "Connected",
+    "description": ""
+  },
+  "options_connect_button": {
+    "message": "Connect",
+    "description": ""
+  },
+  "options_login": {
+    "message": "Login",
+    "description": ""
+  },
+  "options_signup_for_free": {
+    "message": "Sign up for free!",
+    "description": ""
+  },
+  "options_title": {
+    "message": "Browsec Options",
+    "description": ""
+  },
+  "popup_appstore": {
+    "message": "Get Browsec for iPhone\"",
+    "description": ""
+  },
+  "popup_disable": {
+    "message": "Turn off",
+    "description": ""
+  },
+  "popup_protection_disabled_description": {
+    "message": "Your communications are transmitted without Browsec\u2122 encryption. Your location and IP-address available for everyone.",
+    "description": ""
+  },
+  "popup_your_location": {
+    "message": "Your location:",
+    "description": ""
+  },
+  "premium_continue_using": {
+    "message": "Continue using Browsec Premium",
+    "description": ""
+  },
+  "premium_expire_soon": {
+    "message": "Your Browsec Premium is about to expire",
+    "description": ""
+  },
+  "premium_has_expired": {
+    "message": "Your Premium has expired!",
+    "description": ""
+  },
+  "premium_renew_invitation": {
+    "message": "Go ahead and renew it.",
+    "description": ""
+  },
+  "premium_turbo_speed_in_free": {
+    "message": "Turbo Speed in FREE Premium",
+    "description": ""
+  },
+  "premium_upgrade_to_premium": {
+    "message": "Upgrade to Premium Servers",
+    "description": ""
+  },
+  "version_current_config": {
+    "message": "Current configuration",
+    "description": ""
+  },
+  "signup_error": {
+    "message": "Can't connect to Browsec server, please check your Internet connection. Contact our support if you keep getting this error.",
+    "description": ""
+  },
+  "status": {
+    "message": "Status",
+    "description": ""
+  },
+  "support": {
+    "message": "Support",
+    "description": ""
+  },
+  "unknown_country": {
+    "message": "Unknown Country",
+    "description": ""
+  }
+}

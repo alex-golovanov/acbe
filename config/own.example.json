@@ -1,0 +1,37 @@
+{
+  "type": "development",
+
+  "name": {
+    "chrome": "Browsec for Chrome - dev",
+    "edge": "Browsec for Edge - dev",
+    "firefox": "Browsec for Firefox - dev",
+    "opera": "Browsec for Opera - dev"
+  },
+  "shortName": "Browsec-dev",
+  "description": {
+    "chrome": "Browsec VPN is a Chrome VPN extension that protects your IP from Internet threats and lets you browse privately for free.",
+    "edge": "Browsec VPN is an Edge VPN extension that protects your IP from Internet threats and lets you browse privately for free.",
+    "firefox": "Browsec VPN is a Firefox VPN extension that protects your IP from Internet threats and lets you browse privately for free.",
+    "opera": "Browsec VPN is an Opera VPN extension that protects your IP from Internet threats and lets you browse privately for free."
+  },
+
+  "apiServerUrls": [
+    "https://d1txd51bpvmkj5.cloudfront.net/",
+    "https://dore8igm8amd.cloudfront.net/",
+    "https://d3w3aupyw9w4vz.cloudfront.net/"
+  ],
+  "auth": {
+    "enabled": true
+  },
+  "baseUrl": "https://browsec.com",
+  "ga": {
+    "enabled": false,
+    "chance": 0.01,
+    "tracking_id": "UA-60149654-5"
+  },
+	"rootUrl": "https://gist.githubusercontent.com/brwinfo/0d4c6d2ebbe6fd716a43f0ac9d37ce22/raw",
+  "dynamicConfigUrl": "https://gist.githubusercontent.com/brwinfo/ef7f684e524d01137b84313a60e1ed01/raw/",
+  "siteAuthorizationDomains": [
+    "browsec.com"
+  ]
+}

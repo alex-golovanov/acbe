@@ -1,0 +1,5 @@
+Action
+ga.full({ 'category': 'onboarding', 'action': 'first_connection',
+used only once for first url change with enabled proxy/smart setting.
+
+`let firstConnectionGaSent` used as solution for double sent action bug.

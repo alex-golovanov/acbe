@@ -1,0 +1,3 @@
+time.onMark => onMark used to restart from last mark
+
+time.onStart -> onStart action with delay

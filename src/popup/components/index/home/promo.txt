@@ -1,0 +1,7 @@
+Upgrade connection speed
+This banner is shown when user is free and proxy is ON, 
+smart settings does not matter.
+
+Premium expiration banner
+This banner shown in 2 days before expiration. 
+If user clicks "close" - then there is no banner for nearest expiration.

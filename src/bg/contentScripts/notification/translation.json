@@ -1,0 +1,158 @@
+[
+  {
+    "language": "en",
+    "general": {
+      "title": "You’re using Browsec Free",
+      "price_description": "Buy Browsec Premium for only XXX with Turbo Speed for 4K quality streaming!",
+      "upgrade_to_premium_now": "Upgrade to Premium Now",
+      "remind_me_later": "Remind me later"
+    },
+    "bbc": {
+      "title": "Upgrade to watch BBC iPlayer",
+      "price_description": "BBC iPlayer is only available using UK Premium virtual location",
+      "upgrade_to_premium_now": "Upgrade now to watch iPlayer",
+      "remind_me_later": "Remind me later"
+    },
+    "netflix": {
+      "title": "Upgrade to watch Netflix",
+      "price_description": "Netflix is only available using US West Premium virtual location",
+      "upgrade_to_premium_now": "Upgrade now to watch Netflix",
+      "remind_me_later": "Remind me later"
+    },
+    "youtube": {
+      "title": "Watch YouTube in 4K",
+      "price_description": "Get Browsec Premium with Turbo Speed for only XXX",
+      "upgrade_to_premium_now": "Go Premium",
+      "remind_me_later": "Remind me later"
+    }
+  },
+  {
+    "language": "ar",
+    "general": {
+      "title": "أنت تستخدم Browsec المجاني",
+      "price_description": "اشتري Browsec الرئيسي مقابل XXX سرعة تيربو للبث بسرعة فائقة 4K!",
+      "upgrade_to_premium_now": "قم بالترقية إلى الإصدار الأساسي الآن",
+      "remind_me_later": "تذكير لاحقًا"
+    }
+  },
+  {
+    "language": "de",
+    "general": {
+      "title": "Sie nutzen die kostenlose Version von Browsec",
+      "price_description": "Kaufen Sie für nur XXX Browsec Premium mit Turbo-Geschwindigkeit und 4K Streaming in hoher Qualität!",
+      "upgrade_to_premium_now": "Jetzt auf Premium upgraden",
+      "remind_me_later": "Später erinnern"
+    }
+  },
+  {
+    "language": "es",
+    "general": {
+      "title": "Estás usando Browsec Free",
+      "price_description": "¡Compra Browsec Premium por solo XXX con Velocidad Turbo para transmisión en calidad 4K!",
+      "upgrade_to_premium_now": "Pasar a Premium ahora",
+      "remind_me_later": "Recordarme más tarde"
+    }
+  },
+  {
+    "language": "fr",
+    "general": {
+      "title": "Vous utilisez la version gratuite de Browsec",
+      "price_description": "Achetez la version premium de Browsec pour XXX seulement avec Turbo Speed pour une diffusion en qualité 4K!",
+      "upgrade_to_premium_now": "Devenez premium dès maintenant",
+      "remind_me_later": "Me le rappeler plus tard"
+    }
+  },
+  {
+    "language": "id",
+    "general": {
+      "title": "Anda sedang menggunakan Browsec Gratis",
+      "price_description": "Beli Browsec Premiun hanya seharga XXX dengan Kecepatan Turbo untuk streaming berkualitas 4K!",
+      "upgrade_to_premium_now": "Tingkatkan ke Premium Sekarang",
+      "remind_me_later": "Ingatkan saya nanti"
+    }
+  },
+  {
+    "language": "it",
+    "general": {
+      "title": "Stai usando Browsec Free",
+      "price_description": "Acquista Browsec Premium per soli XXX con Turbo Speed per streaming ad alta qualità!",
+      "upgrade_to_premium_now": "Passa subito a Premium",
+      "remind_me_later": "Ricordamelo più tardi"
+    }
+  },
+  {
+    "language": "ko",
+    "general": {
+      "title": "Browsec Free를 사용 중입니다",
+      "price_description": "단 XXX에 4K 품질 스트리밍을 위한 터보 속도를 갖춘 Browsec Premium을 구입하세요!",
+      "upgrade_to_premium_now": "지금 프리미엄으로 업그레이드",
+      "remind_me_later": "나중에 알림"
+    }
+  },
+  {
+    "language": "pt",
+    "general": {
+      "title": "Está a utilizar o Browsec Free",
+      "price_description": "Comprar Browsec Premium por apenas XXX com Turbo Speed para streaming em qualidade 4K!",
+      "upgrade_to_premium_now": "Fazer upgrade agora para o Premium",
+      "remind_me_later": "Lembrar-me mais tarde"
+    }
+  },
+  {
+    "language": "ru",
+    "general": {
+      "title": "Вы используете бесплатный план Browsec",
+      "price_description": "Получите Premium всего за XXX для просмотра видео в 4K-качестве!",
+      "upgrade_to_premium_now": "Получить Premium",
+      "remind_me_later": "Напомнить позже"
+    },
+		"bbc": {
+      "title": "Смотреть BBC iPlayer",
+      "price_description": "BBC iPlayer доступен только с Premium",
+      "upgrade_to_premium_now": "Получи и смотри iPlayer",
+      "remind_me_later": "Напомните мне позже"
+    },
+    "youtube": {
+      "title": "Смотрите YouTube без замедлений",
+      "price_description": "Перейдите на Premium план, чтобы поднять скорость просмотра всего за XXX",
+      "upgrade_to_premium_now": "Перейти на Premium",
+      "remind_me_later": "Напомните мне позже"
+    }
+  },
+  {
+    "language": "th",
+    "general": {
+      "title": "คุณกำลังใช้งาน Browsec Free",
+      "price_description": "ซื้อ Browsec Premium ในราคาเพียง XXX พร้อมด้วย Turbo Speed สำหรับสตรีมมิ่งคุณภาพระดับ 4K!",
+      "upgrade_to_premium_now": "อัปเกรดเป็น Premium ตอนนี้เลย",
+      "remind_me_later": "เตือนฉันภายหลัง"
+    }
+  },
+  {
+    "language": "tr",
+    "general": {
+      "title": "Ücretsiz Browsec kullanıyorsunuz",
+      "price_description": "Sadece XXX 'a Browsec Premium'u Turbo Hız ve 4K yayın kalitesi için satın alın!",
+      "upgrade_to_premium_now": "Şimdi Premium'a Geç!",
+      "remind_me_later": "Daha sonra hatırlat"
+    }
+  },
+  {
+    "language": "vi",
+    "general": {
+      "title": "Bạn đang sử dụng Browsec Miễn phí",
+      "price_description": "Mua Browsec Cao cấp chỉ với XXX với Turbo Speed cho tốc độ truyền dữ liệu chất lượng 4K!",
+      "upgrade_to_premium_now": "Nâng cấp ngay lên hạng Cao cấp.",
+      "remind_me_later": "Nhắc lại sau."
+    }
+  },
+  {
+    "language": "uk",
+    "general": {
+      "title": "Ви використовуєте безкоштовний план Browsec",
+      "price_description": "Купуйте Premium всього за XXX для перегляду відео в 4K-якості!",
+      "upgrade_to_premium_now": "Купити Premium",
+      "remind_me_later": "Нагадати мені пізніше"
+    }
+  }
+]

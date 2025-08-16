@@ -1,0 +1,5 @@
+If proxy ON or there is some active smart setting for visited site - 
+through 10 seconds show notification block on site's page.
+User can hide it.
+
+Every 3 days changes form from hidden to visible (in case user hide it).

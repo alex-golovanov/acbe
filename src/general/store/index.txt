@@ -1,0 +1,2 @@
+Keep in mind that two Redux stores in popup and background keep updated 
+by using storage.local

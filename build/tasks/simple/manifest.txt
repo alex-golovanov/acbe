@@ -1,0 +1,5 @@
+Proxy conflict page only for Chrome. 
+So for Firefox no need for management optional permission.
+
+'declarativeWebRequest' requires manifest version of 2 or lower.
+'webRequestBlocking' requires manifest version of 2 or lower.
