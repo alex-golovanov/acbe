@@ -1,92 +1,95 @@
 /* global AjaxAccount, Credentials, OnErrorOccurredDetails, RuntimePort, RuntimeMessageSender, StoreState */
-import 'bg/lodashImport'; // must be top level
+import "bg/lodashImport"; // must be top level
 
 // Polyfills
-import 'polyfills/Array.flat';
-import 'polyfills/Array.flatMap';
-import 'polyfills/Object.fromEntries';
-import 'polyfills/Promise.prototype.finally';
-import 'polyfills/String.prototype.padEnd';
-import 'polyfills/String.prototype.padStart';
+import "polyfills/Array.flat";
+import "polyfills/Array.flatMap";
+import "polyfills/Object.fromEntries";
+import "polyfills/Promise.prototype.finally";
+import "polyfills/String.prototype.padEnd";
+import "polyfills/String.prototype.padStart";
 
 // Libraries
-import Browser from 'crossbrowser-webextension';
+import Browser from "crossbrowser-webextension";
 
 // Code parts
-import account from 'bg/account';
-import actions from 'bg/actions';
-import ajax from 'tools/ajax';
-import ajaxes from 'ajaxes';
-import availableServer, { getAndSaveApiDomainsList } from 'availableServer';
-import config from 'config';
-import Counters from 'bg/Counters';
-import createElement from 'tools/createElement';
-import Deferred from 'tools/Deferred';
-import DelayRecord from 'DelayRecord';
-import Diagnostics from 'bg/Diagnostics';
-import diagnosticRequests from 'bg/diagnosticRequests';
-import domainZoneList from 'bg/domainZoneList';
-import ga from 'ga';
-import gaInititator from 'bg/gaInititator';
-import highLevelPacStoreListeners from 'highLevelPac/storeListeners';
-import internationalize from 'tools/internationalize';
-import jitsu from 'jitsu';
-import log from 'log';
-import lowLevelPac from 'lowLevelPac';
-import lowLevelPacStoreListeners from 'lowLevelPac/storeListeners';
-import onInstalled from 'bg/runtime.onInstalled';
-import onMessage from 'bg/runtime.onMessage';
-import onStartAction from 'bg/onStartAction';
-import permissions from 'bg/permissions';
-import promotions from 'bg/promotions';
-import proxy from 'proxy';
+import account from "bg/account";
+import actions from "bg/actions";
+import ajax from "tools/ajax";
+import ajaxes from "ajaxes";
+import availableServer, { getAndSaveApiDomainsList } from "availableServer";
+import config from "config";
+import Counters from "bg/Counters";
+import createElement from "tools/createElement";
+import Deferred from "tools/Deferred";
+import DelayRecord from "DelayRecord";
+import Diagnostics from "bg/Diagnostics";
+import diagnosticRequests from "bg/diagnosticRequests";
+import domainZoneList from "bg/domainZoneList";
+import ga from "ga";
+import gaInititator from "bg/gaInititator";
+import highLevelPacStoreListeners from "highLevelPac/storeListeners";
+import internationalize from "tools/internationalize";
+import jitsu from "jitsu";
+import log from "log";
+import lowLevelPac from "lowLevelPac";
+import lowLevelPacStoreListeners from "lowLevelPac/storeListeners";
+import onInstalled from "bg/runtime.onInstalled";
+import onMessage from "bg/runtime.onMessage";
+import onStartAction from "bg/onStartAction";
+import permissions from "bg/permissions";
+import promotions from "bg/promotions";
+import proxy from "proxy";
 // @ts-ignore
-import punycode from 'punycode'; // eslint-disable-line
-import ShowedOffers from 'bg/ShowedOffers';
-import Statistics from 'bg/Statistics';
-import store from 'store';
-import storage from 'storage';
-import timemarks from 'bg/timemarks';
-import timezoneChange from 'bg/contentScripts/timezoneChange';
-import trySendDailyRetention from 'bg/trySendDailyRetention';
-import urlModifyParameters from 'tools/urlModifyParameters';
-import urlToDomain from 'tools/urlToDomain';
-import smartAlert from 'tools/smartAlert';
-import UserPropertiesObserver from 'bg/UserPropertiesObserver';
-import webRequest from 'bg/webRequest';
-import webrtc from 'bg/webrtc';
-import KeepAliveWorker from 'bg/keepAliveWorker';
-import { weightedRandom, getDefaultCountry } from 'tools/index';
-import { getDataAndUpdateServers } from 'bg/serversObject';
-import { onGlobalRequestError } from 'bg/antivirusBlock/checkAntivirusBlock';
-import highLevelPac from 'highLevelPac';
-import { updateDynamicConfig, runAndScheduleDynamicConfigUpdate } from 'bg/dynamicConfig';
-import { experimentsHelper } from 'experiments';
+import punycode from "punycode"; // eslint-disable-line
+import ShowedOffers from "bg/ShowedOffers";
+import Statistics from "bg/Statistics";
+import store from "store";
+import storage from "storage";
+import timemarks from "bg/timemarks";
+import timezoneChange from "bg/contentScripts/timezoneChange";
+import trySendDailyRetention from "bg/trySendDailyRetention";
+import urlModifyParameters from "tools/urlModifyParameters";
+import urlToDomain from "tools/urlToDomain";
+import smartAlert from "tools/smartAlert";
+import UserPropertiesObserver from "bg/UserPropertiesObserver";
+import webRequest from "bg/webRequest";
+import webrtc from "bg/webrtc";
+import KeepAliveWorker from "bg/keepAliveWorker";
+import { weightedRandom, getDefaultCountry } from "tools/index";
+import { getDataAndUpdateServers } from "bg/serversObject";
+import { onGlobalRequestError } from "bg/antivirusBlock/checkAntivirusBlock";
+import highLevelPac from "highLevelPac";
+import {
+  updateDynamicConfig,
+  runAndScheduleDynamicConfigUpdate,
+} from "bg/dynamicConfig";
+import { experimentsHelper } from "experiments";
 
 import {
   instantPingSmartSettingsServers,
   throttledPingSmartSettingsServers,
   scheduleSmartSettingsPingAlarms,
-} from 'bg/pingSmartSettings';
+} from "bg/pingSmartSettings";
 
-import 'bg/browsecComAvailable';
-import 'bg/browserIcon';
-import 'bg/contentScripts';
-import 'bg/reanimator';
-import 'bg/daysAfterInstall';
-import 'bg/declarativeNetRequest';
-import 'bg/ping';
-import 'bg/popupListeners';
-import 'bg/proxyErrors';
-import 'bg/proxyIsBroken';
-import 'bg/runtime.onConnect';
-import 'bg/urlListener';
-import 'bg/contentScripts/notification/messageSystem';
-import 'bg/contentScripts/promoPageExecutor/messageSystem';
-import 'bg/contentScripts/timezoneChange/messageSystem';
-import 'time';
+import "bg/browsecComAvailable";
+import "bg/browserIcon";
+import "bg/contentScripts";
+import "bg/reanimator";
+import "bg/daysAfterInstall";
+import "bg/declarativeNetRequest";
+import "bg/ping";
+import "bg/popupListeners";
+import "bg/proxyErrors";
+import "bg/proxyIsBroken";
+import "bg/runtime.onConnect";
+import "bg/urlListener";
+import "bg/contentScripts/notification/messageSystem";
+import "bg/contentScripts/promoPageExecutor/messageSystem";
+import "bg/contentScripts/timezoneChange/messageSystem";
+import "time";
 
-log('Background script start');
+log("Background script start");
 
 const manifestVersion = Browser.runtime.getManifest().manifest_version;
 
@@ -94,31 +97,27 @@ const manifestVersion = Browser.runtime.getManifest().manifest_version;
 @function
 @return - true if account valid */
 const validateAccount = (account: AjaxAccount): boolean => {
-  if (account.type === 'guest') return true;
+  if (account.type === "guest") return true;
 
   const token = account.credentials.access_token;
 
   return Boolean(token && token.match(/^[a-zA-Z0-9]{20}$/));
 };
 
-
 /** @function */
 const reloadFullServersChain = async () => {
   try {
     await getAndSaveApiDomainsList();
-  }
-  catch (x) { }
+  } catch (x) {}
 
   await availableServer.restart();
 
   try {
     await getDataAndUpdateServers();
-  }
-  catch (x) { }
+  } catch (x) {}
 
   await proxy.setFromStore();
 };
-
 
 // Global assigments (needed for access from other pages / content script)
 Object.assign(self, {
@@ -144,8 +143,61 @@ Object.assign(self, {
   store,
   timezoneChange,
   highLevelPac,
+  lowLevelPac,
   timemarks,
   experimentsHelper,
+  // Debugging function for server rotation testing
+  testServerRotation: async (country: string, failedHost: string) => {
+    console.log(
+      `Testing server rotation for country: ${country}, failed host: ${failedHost}`
+    );
+    const { lowLevelPac: currentPac } = await store.getStateAsync();
+    
+    // Create proper snapshots before rotation
+    const premiumBefore = currentPac.premiumCountries[country] ? [...currentPac.premiumCountries[country]] : undefined;
+    const regularBefore = currentPac.countries[country] ? [...currentPac.countries[country]] : undefined;
+
+    console.log("Before rotation:");
+    console.log("  Premium servers:", premiumBefore);
+    console.log("  Regular servers:", regularBefore);
+
+    if (premiumBefore && premiumBefore.length > 0) {
+      console.log("  First premium server:", premiumBefore[0]);
+      console.log(
+        "  Failed host in first premium server?",
+        premiumBefore[0].includes(failedHost)
+      );
+    }
+
+    if (regularBefore && regularBefore.length > 0) {
+      console.log("  First regular server:", regularBefore[0]);
+      console.log(
+        "  Failed host in first regular server?",
+        regularBefore[0].includes(failedHost)
+      );
+    }
+
+    const result = await lowLevelPac.rotateServerInCountry(country, failedHost);
+
+    const { lowLevelPac: newPac } = await store.getStateAsync();
+    const premiumAfter = newPac.premiumCountries[country];
+    const regularAfter = newPac.countries[country];
+
+    console.log("After rotation:");
+    console.log("  Premium servers:", premiumAfter);
+    console.log("  Regular servers:", regularAfter);
+    console.log("  Rotation successful:", result);
+
+    // Check if there was actually a change
+    const premiumChanged =
+      JSON.stringify(premiumBefore) !== JSON.stringify(premiumAfter);
+    const regularChanged =
+      JSON.stringify(regularBefore) !== JSON.stringify(regularAfter);
+    console.log("  Actually changed:", premiumChanged || regularChanged);
+
+    return result;
+  },
+
   tools: {
     createElement,
     Deferred,
@@ -159,7 +211,7 @@ Object.assign(self, {
     updateDynamicConfig,
     getDefaultCountry,
   },
-  webrtc
+  webrtc,
 });
 
 // @ts-ignore
@@ -167,49 +219,41 @@ self.getFirstServerByCountry = async () => {
   const { lowLevelPac } = await store.getStateAsync();
 
   return Object.fromEntries(
-    Object.entries(lowLevelPac.countries).map(
-      ([country, servers]) => {
-        return [country, servers[0]];
-      }
-    )
+    Object.entries(lowLevelPac.countries).map(([country, servers]) => {
+      return [country, servers[0]];
+    })
   );
 };
 
-
-Browser.proxy.onError.addListener(async details => {
-  log('proxy.onError', details);
-  Counters.increase('proxy errors');
+Browser.proxy.onError.addListener(async (details) => {
+  log("proxy.onError", details);
+  Counters.increase("proxy errors");
   throttledPingSmartSettingsServers();
 
-  if( details.error === 'net::ERR_PAC_SCRIPT_FAILED' ) {
-    jitsu.track('error', {
-      'type': 'runtime_error',
-      'code': details.error,
-      'text': details.details
+  if (details.error === "net::ERR_PAC_SCRIPT_FAILED") {
+    jitsu.track("error", {
+      type: "runtime_error",
+      code: details.error,
+      text: details.details,
     });
   }
 });
 
-
 store.initiate();
-
 
 onInstalled();
 
-
 Browser.runtime.onStartup.addListener(() => {
-  log('browser.runtime.onStartup');
+  log("browser.runtime.onStartup");
 
   ga.partial({
-    'category': 'extension',
-    'action': 'start',
-    'label': Browser.runtime.getManifest().version
+    category: "extension",
+    action: "start",
+    label: Browser.runtime.getManifest().version,
   });
 });
 
-
 webRequest(); // NOTE very critical
-
 
 // First user premium gain
 store.onChange(
@@ -217,102 +261,94 @@ store.onChange(
   async (userIsPremium) => {
     if (!userIsPremium) return;
 
-    const value: true | undefined =
-      await storage.get('User premium first gain');
+    const value: true | undefined = await storage.get(
+      "User premium first gain"
+    );
     if (value) return;
 
-    storage.set('User premium first gain', true);
-    jitsu.track('premium');
+    storage.set("User premium first gain", true);
+    jitsu.track("premium");
   }
 );
 
-
-{ // Startup tips shown (ensuring not showing startup tips on user data changes)
+{
+  // Startup tips shown (ensuring not showing startup tips on user data changes)
   /** @function */
   const listener = async () => {
-    const startupTipsShown = await storage.get('startup tips shown');
+    const startupTipsShown = await storage.get("startup tips shown");
     if (startupTipsShown === true) return;
 
-    storage.set('startup tips shown', true);
+    storage.set("startup tips shown", true);
   };
 
-  store.onChange(
-    ({ userPac }) => userPac,
-    listener
-  );
+  store.onChange(({ userPac }) => userPac, listener);
 
-  store.onChange(
-    ({ user }) => Boolean(user.email),
-    listener
-  );
+  store.onChange(({ user }) => Boolean(user.email), listener);
 }
-
 
 // First Proxy ON after install
 (() => {
   store.onChange(
     ({ userPac }) => userPac.mode,
     async () => {
-      const storageValue: boolean | undefined =
-        await storage.get('onboarding firstStart');
+      const storageValue: boolean | undefined = await storage.get(
+        "onboarding firstStart"
+      );
       if (storageValue !== false) return;
 
-      ga.full({ 'category': 'onboarding', 'action': 'firstStart' });
-      jitsu.track('firstStart');
+      ga.full({ category: "onboarding", action: "firstStart" });
+      jitsu.track("firstStart");
 
-      storage.set('onboarding firstStart', true);
+      storage.set("onboarding firstStart", true);
     }
   );
 })();
 
-
 onStartAction(() => {
-  log(
-    (manifestVersion === 3 ? 'Service worker' : 'Background') + ' start'
-  );
+  log((manifestVersion === 3 ? "Service worker" : "Background") + " start");
 
   // File system state
   (async () => {
     try {
-      await Browser.storage.local.set({ 'file_system_state': true });
-      await Browser.storage.local.get('file_system_state');
-      log('File system OK');
-    }
-    catch (error) {
-      log.error('File system broken');
+      await Browser.storage.local.set({ file_system_state: true });
+      await Browser.storage.local.get("file_system_state");
+      log("File system OK");
+    } catch (error) {
+      log.error("File system broken");
     }
   })();
 });
 
-if( manifestVersion === 3 ) {
+if (manifestVersion === 3) {
   const keepAliveWorker = new KeepAliveWorker();
   keepAliveWorker.start();
 }
 
-onStartAction( () => {
-  if( manifestVersion === 3 ) {
+onStartAction(() => {
+  if (manifestVersion === 3) {
     scheduleSmartSettingsPingAlarms();
   }
 });
 
-onStartAction( () => {
+onStartAction(() => {
   runAndScheduleDynamicConfigUpdate();
 });
 
 onStartAction(async () => {
-  await storage.set('User data promise', 0);
+  await storage.set("User data promise", 0);
 
   /** Initial load of account data (especially for FF proxy check)
   @type {Promise} - with user data */
   (async () => {
-    await storage.set('User data promise', 1);
+    await storage.set("User data promise", 1);
 
     const user = await (async () => {
       try {
         return await account.load();
-      }
-      catch (error) {
-        availableServer.initialRequestComplete.then(() => { account.load(); });
+      } catch (error) {
+        availableServer.initialRequestComplete.then(() => {
+          account.load();
+        });
         const { user } = await store.getStateAsync();
 
         return user; // No broken chain
@@ -320,55 +356,63 @@ onStartAction(async () => {
     })();
     await lowLevelPac.shuffle(); // Set initial proxy state
 
-    await storage.set('User data promise', 2);
+    await storage.set("User data promise", 2);
 
     return user;
   })();
 });
 
-
 /** Change of premium status leads to high level PAC country change */
 store.onChange(
-  ({ 'user': { email, 'premium': premiumUser } }) => ({
-    'logined': Boolean(email), premiumUser
+  ({ user: { email, premium: premiumUser } }) => ({
+    logined: Boolean(email),
+    premiumUser,
   }),
   async (
-    { 'logined': loginedNew, 'premiumUser': premiumNew },
-    { 'logined': loginedOld, 'premiumUser': premiumOld },
+    { logined: loginedNew, premiumUser: premiumNew },
+    { logined: loginedOld, premiumUser: premiumOld },
     storeState
   ) => {
-    if (premiumOld !== premiumNew) { // Premium status change
-      const userDataPromiseValue =
-        await storage.get('User data promise');
+    if (premiumOld !== premiumNew) {
+      // Premium status change
+      const userDataPromiseValue = await storage.get("User data promise");
       if (userDataPromiseValue !== 2) return;
 
-      const action: string = !premiumOld && premiumNew
-        ? 'from free to premium'
-        : 'from premium to free';
+      const action: string =
+        !premiumOld && premiumNew
+          ? "from free to premium"
+          : "from premium to free";
       const name: string = `Proxy: switching ${action} servers`;
 
       if (!loginedNew) log(name);
 
       let timer: DelayRecord | undefined;
 
-      if (loginedNew) { // Only on login
+      if (loginedNew) {
+        // Only on login
         timer = new DelayRecord(name);
       }
 
-      if (premiumNew) { // From free to premium -> just re-shuffle
+      if (premiumNew) {
+        // From free to premium -> just re-shuffle
         lowLevelPac.shuffle();
-      }
-      else { // From premium to free
-        const freeCountries = Array.from(storeState.proxyServers.freeCountries()); // @ts-ignore
+      } else {
+        // From premium to free
+        const freeCountries = Array.from(
+          storeState.proxyServers.freeCountries()
+        ); // @ts-ignore
         const defaultCountry = await getDefaultCountry();
 
         if (!freeCountries.includes(storeState.userPac.country)) {
           store.dispatch({
-            'type': 'User PAC: update',
-            'data': { 'country': freeCountries.includes(defaultCountry) ? defaultCountry : freeCountries[0] }
+            type: "User PAC: update",
+            data: {
+              country: freeCountries.includes(defaultCountry)
+                ? defaultCountry
+                : freeCountries[0],
+            },
           });
-        }
-        else {
+        } else {
           lowLevelPac.shuffle();
         }
       }
@@ -381,90 +425,87 @@ store.onChange(
   }
 );
 
-
 // browser.runtime.onMessage
 // Change authentication data from site login
 onMessage.addListener({
-  'type': 'auth',
-  'callback': (
-    { account, env }: { 'account': unknown, 'env': string },
+  type: "auth",
+  callback: (
+    { account, env }: { account: unknown; env: string },
     sender: RuntimeMessageSender
   ) => {
     const accountData = account;
     const senderUrl = sender.url;
 
-    if (typeof senderUrl !== 'string') return;
-    if (!senderUrl.startsWith('https://')) return;
+    if (typeof senderUrl !== "string") return;
+    if (!senderUrl.startsWith("https://")) return;
 
-    if (typeof accountData !== 'object' || !accountData) return;
+    if (typeof accountData !== "object" || !accountData) return;
 
     if (config.type !== env) {
-      log('Site auth from different environment', config.type, env);
+      log("Site auth from different environment", config.type, env);
       return;
     }
 
     // @ts-ignore
-    accountData.type = accountData.email ? 'logined' : 'guest';
+    accountData.type = accountData.email ? "logined" : "guest";
 
     // @ts-ignore
     if (!validateAccount(accountData)) {
-      throw new Error('invalid credentials: ' + JSON.stringify(accountData));
+      throw new Error("invalid credentials: " + JSON.stringify(accountData));
     }
 
     store.dispatch({
-      'type': 'User: set',
-      'data': (accountData as AjaxAccount)
+      type: "User: set",
+      data: accountData as AjaxAccount,
     });
-  }
+  },
 });
 
 /** Reload account */
 onMessage.addListener({
-  'type': 'reload',
-  'callback': (x: any, sender: RuntimeMessageSender) => {
+  type: "reload",
+  callback: (x: any, sender: RuntimeMessageSender) => {
     const senderUrl = sender.url;
-    if (typeof senderUrl !== 'string') return;
+    if (typeof senderUrl !== "string") return;
 
     let urls: Array<string> = [senderUrl, config.baseUrl].map(
-      item => (new URL(item)).origin
+      (item) => new URL(item).origin
     );
     if (urls[0] !== urls[1]) {
-      log.warn('Message from an untrusted sender: ' + sender);
+      log.warn("Message from an untrusted sender: " + sender);
       return;
     }
 
     account.reload();
-  }
+  },
 });
-
 
 Browser.tabs.onUpdated.addListener(async (tabId, { status }, tab) => {
-  if (status !== 'complete') return;
-  const url = tab.url?.split?.('?')?.[0];
-  if (url !== config.baseUrl + '/en/accounts/index') return;
+  if (status !== "complete") return;
+  const url = tab.url?.split?.("?")?.[0];
+  if (url !== config.baseUrl + "/en/accounts/index") return;
 
-  const storageValue = await storage.get('account suspended restore');
-  if (storageValue !== 'initiated') return;
+  const storageValue = await storage.get("account suspended restore");
+  if (storageValue !== "initiated") return;
 
-  storage.set('account suspended restore', 'fullfilled');
+  storage.set("account suspended restore", "fullfilled");
 
-  Browser.tabs.sendMessage(tabId, { 'show update payment info': true });
+  Browser.tabs.sendMessage(tabId, { "show update payment info": true });
 });
-
 
 {
   /** @function */
   const action = async (storeState: StoreState) => {
     const hasSmartSetting = storeState.userPac.filters.some(
-      ({ value }) => (
-        typeof value === 'string' && (
-          value === 'firefox.com' || value.endsWith('.firefox.com')
-        )
-      )
+      ({ value }) =>
+        typeof value === "string" &&
+        (value === "firefox.com" || value.endsWith(".firefox.com"))
     );
     if (hasSmartSetting) return;
 
-    await new Promise(resolve => { setTimeout(resolve, 50); });
+    await new Promise((resolve) => {
+      setTimeout(resolve, 50);
+    });
 
     const { lowLevelPac } = await store.getStateAsync();
     const { countries, globalReturn } = lowLevelPac;
@@ -478,30 +519,28 @@ Browser.tabs.onUpdated.addListener(async (tabId, { status }, tab) => {
 
         try {
           const output = await ajax(
-            'http://detectportal.firefox.com/success.txt',
-            { 'method': 'GET' }
+            "http://detectportal.firefox.com/success.txt",
+            { method: "GET" }
           );
 
-          resolve(output.trim() === 'success');
-        }
-        catch (error) {
+          resolve(output.trim() === "success");
+        } catch (error) {
           resolve(false);
         }
       }
     );
 
-    const [domain, port] =
-      countries[globalReturn][0].split(' ')[1].split(':');
+    const [domain, port] = countries[globalReturn][0].split(" ")[1].split(":");
 
-    jitsu.track('connection_attempt', {
-      'success': String(requestResult ? 1 : 0),
-      'server_domain': domain,
-      'server_port': port
+    jitsu.track("connection_attempt", {
+      success: String(requestResult ? 1 : 0),
+      server_domain: domain,
+      server_port: port,
     });
   };
 
   store.onChange(
-    ({ userPac }) => userPac.mode === 'direct' ? null : userPac.country,
+    ({ userPac }) => (userPac.mode === "direct" ? null : userPac.country),
     async (pacCountry, x, storeState) => {
       if (!pacCountry) return; // Only with country
 
@@ -510,21 +549,20 @@ Browser.tabs.onUpdated.addListener(async (tabId, { status }, tab) => {
   );
 }
 
-
 // dailyRetention section
 store.onChange(
-  ({ 'userPac': pac }) => ({ 'filters': pac.filters, 'mode': pac.mode }),
+  ({ userPac: pac }) => ({ filters: pac.filters, mode: pac.mode }),
   () => {
     trySendDailyRetention();
   }
 );
 
-
-{ // onAuth cache removal feature
+{
+  // onAuth cache removal feature
   const listener = async ({ url, error }: OnErrorOccurredDetails) => {
     onGlobalRequestError(error);
 
-    if (error !== 'net::ERR_TUNNEL_CONNECTION_FAILED') return;
+    if (error !== "net::ERR_TUNNEL_CONNECTION_FAILED") return;
 
     const domain = urlToDomain(url);
     if (!domain) return;
@@ -534,39 +572,36 @@ store.onChange(
 
     Browser.browsingData.remove(
       {
-        'origins': [`http://${domain}`, `https://${domain}`]
+        origins: [`http://${domain}`, `https://${domain}`],
       },
       {
-        'appcache': true,
-        'cache': true,
-        'cacheStorage': true,
-        'serviceWorkers': true,
+        appcache: true,
+        cache: true,
+        cacheStorage: true,
+        serviceWorkers: true,
       }
     );
   };
 
-  Browser.webRequest.onErrorOccurred.addListener(
-    listener,
-    { 'urls': ['<all_urls>'] }
-  );
+  Browser.webRequest.onErrorOccurred.addListener(listener, {
+    urls: ["<all_urls>"],
+  });
 
   store.onChange(
     ({ cacheRemoval }) => cacheRemoval,
     (cacheRemoval) => {
-      if (cacheRemoval) Browser.resetAPI('browsingData');
+      if (cacheRemoval) Browser.resetAPI("browsingData");
     }
   );
 }
 
-
 lowLevelPacStoreListeners();
 highLevelPacStoreListeners();
-
 
 store.onChange(
   ({ userPac }) => userPac.mode,
   (newState, oldState) => {
-    if (newState === 'proxy') jitsu.track('vpnOn');
+    if (newState === "proxy") jitsu.track("vpnOn");
   }
 );
 
@@ -575,26 +610,24 @@ store.onChange(
   (newState, oldState) => {
     if (newState.length !== oldState.length + 1) return;
 
-    ga.full({ 'action': 'smartSettingsAdd', 'category': 'smartSettings' });
-    jitsu.track('smartSettingsAdd');
+    ga.full({ action: "smartSettingsAdd", category: "smartSettings" });
+    jitsu.track("smartSettingsAdd");
   }
 );
-
 
 {
   const channels: { [id: string]: RuntimePort } = {};
   Browser.runtime.onConnect.addListener((runtimePort) => {
-    if (!runtimePort.name.startsWith('popup connection ')) return;
+    if (!runtimePort.name.startsWith("popup connection ")) return;
 
-    const id = runtimePort.name.split('popup connection ')[1];
+    const id = runtimePort.name.split("popup connection ")[1];
 
     const openedPopups = Object.keys(channels);
     if (openedPopups.length) {
       for (const id of openedPopups) {
         try {
-          channels[id].postMessage('close');
-        }
-        catch (x) { }
+          channels[id].postMessage("close");
+        } catch (x) {}
 
         delete channels[id];
       }
@@ -605,23 +638,20 @@ store.onChange(
     runtimePort.onDisconnect.addListener(() => {
       delete channels[id];
 
-      jitsu.track('popup_close');
+      jitsu.track("popup_close");
     });
   });
 }
-
 
 // First proxy on
 store.onChange(
   ({ userPac }) => userPac.mode,
   async (proxyMode) => {
-    if (proxyMode === 'direct') return;
+    if (proxyMode === "direct") return;
 
-    const value = await storage.get('First proxy on');
+    const value = await storage.get("First proxy on");
     if (value) return;
 
-    storage.set('First proxy on', true);
+    storage.set("First proxy on", true);
   }
 );
-
-
